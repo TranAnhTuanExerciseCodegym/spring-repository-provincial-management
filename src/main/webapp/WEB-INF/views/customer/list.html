@@ -15,6 +15,11 @@
     <a th:href="@{/customer-create}">Create Customer</a>
 </p>
 <h1>List Customer</h1>
+<form>
+    Search by first name:
+    <input name="s" type="text"/>
+    <input type="submit" value="Search"/>
+</form><br/>
 <th:block th:if="${message}">
     <span th:text="${message}"></span>
 </th:block>

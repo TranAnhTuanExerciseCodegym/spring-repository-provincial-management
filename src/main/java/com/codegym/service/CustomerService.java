@@ -15,4 +15,6 @@ public interface CustomerService {
     void remove(Integer id);
 
     Iterable<Customer> findAllByProvince(Province province);
+
+    Page<Customer> findAllByFirstNameContaining(String firstName, Pageable pageable);
 }
