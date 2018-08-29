@@ -18,6 +18,7 @@ import java.util.Optional;
 
 
 @Controller
+@SessionAttributes("customerI18n")
 public class CustomerController {
     @Autowired
     private CustomerService customerService;

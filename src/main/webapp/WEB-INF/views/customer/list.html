@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <style type="text/css">
         body {
@@ -8,39 +8,41 @@
         }
     </style>
     <meta charset="UTF-8">
-    <title>List Customer</title>
+    <title th:text="#{customer.title_list}"></title>
 </head>
 <body>
 <p>
     <a th:href="@{/customer-create}">Create Customer</a>
 </p>
-<h1>List Customer</h1>
+<h1 th:text="#{customer.title_list}"></h1>
+Language: <a href="?lang=en">English</a> | <a href="?lang=vi">Vietnamese</a>
 <form>
     Search by first name:
     <input name="s" type="text"/>
     <input type="submit" value="Search"/>
-</form><br/>
+</form>
+<br/>
 <th:block th:if="${message}">
     <span th:text="${message}"></span>
 </th:block>
 <table>
     <tr>
         <td>#</td>
-        <td>First Name</td>
-        <td>Last Name</td>
-        <td>Province</td>
-        <td>Edit</td>
-        <td>Delete</td>
-        <td>View</td>
+        <td th:text="#{customer.name_firstName}"></td>
+        <td th:text="#{customer.name_lastName}"></td>
+        <td th:text="#{customer.name_Province}"></td>
+        <td th:text="#{customer.edit}"></td>
+        <td th:text="#{customer.delete}"></td>
+        <td th:text="#{customer.view}"></td>
     </tr>
     <tr th:each="row : ${customers}">
         <td th:text="${row.id}"></td>
         <td th:text="${row.firstName}"></td>
         <td th:text="${row.lastName}"></td>
         <td><span th:if="${row.province}" th:text="${row.province.name}"></span></td>
-        <td><a th:href="@{/customer-edit/__${row.getId()}__}">Edit</a></td>
-        <td><a th:href="@{/customer-delete/__${row.getId()}__}">Delete</a></td>
-        <td><a th:href="@{/customer-view/__${row.getId()}__}">View</a></td>
+        <td><a th:href="@{/customer-edit/__${row.getId()}__}" th:text="#{customer.edit}"></a></td>
+        <td><a th:href="@{/customer-delete/__${row.getId()}__}" th:text="#{customer.delete}"></a></td>
+        <td><a th:href="@{/customer-view/__${row.getId()}__}" th:text="#{customer.view}"></a></td>
     </tr>
 </table>
 <div>
