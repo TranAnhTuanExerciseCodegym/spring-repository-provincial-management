@@ -47,7 +47,7 @@ import java.util.Properties;
 @EnableWebMvc
 @EnableTransactionManagement
 @ComponentScan("com.codegym")
-//@EnableJpaRepositories("com.codegym.repository")
+@EnableJpaRepositories("com.codegym.repository")
 @EnableSpringDataWebSupport
 public class ApplicationConfig extends WebMvcConfigurerAdapter implements ApplicationContextAware {
 
